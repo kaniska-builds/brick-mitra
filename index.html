@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7f291c">
+<meta name="description" content="Brick Mitra - Quality red clay bricks for your dream home. Request brick and delivery quotes.">
+<title>Brick Mitra | Quality Bricks. Stronger Foundations.</title>
+
+<style>
+:root {
+  --brick: #842d20;
+  --brick-dark: #351914;
+  --cream: #fff8f0;
+  --gold: #f2b66d;
+  --text: #281e1a;
+  --muted: #766760;
+  --white: #fff;
+  --border: #eadbd0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+button {
+  cursor: pointer;
+  border: none;
+}
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.nav {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  color: var(--brick);
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -.6px;
+}
+.logo span { color: var(--text); }
+.nav-right { display: flex; gap: 8px; align-items: center; }
+.lang-btn, .menu-btn {
+  background: #f3e5da;
+  color: var(--text);
+  padding: 10px 13px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.hero {
+  color: white;
+  background:
+    radial-gradient(ellipse at 90% 15%, #a94a32 0, transparent 38%),
+    linear-gradient(130deg, #291511, #6c241b 58%, #923a25);
+  padding: 72px 0 64px;
+  overflow: hidden;
+}
+.hero-content { max-width: 760px; }
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(39px, 8vw, 66px);
+  line-height: 1.07;
+  letter-spacing: -2px;
+  margin: 18px 0;
+}
+.hero p {
+  max-width: 600px;
+  color: #f4ded4;
+  font-size: 17px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 27px;
+}
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px;
+  border-radius: 11px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  transition: transform .2s;
+}
+.btn:active { transform: scale(.97); }
+.btn-primary { background: var(--gold); color: #321810; }
+.btn-white { color: white; border: 1px solid #d8b7a8; }
+.hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 30px;
+  color: #f6d7c8;
+  font-size: 13px;
+}
+section { padding: 55px 0; }
+.section-heading {
+  font-size: clamp(27px, 5vw, 36px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+  letter-spacing: -.7px;
+}
+.section-sub {
+  color: var(--muted);
+  margin: 0 0 27px;
+  max-width: 680px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 17px;
+}
+.card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 7px 25px rgba(59, 29, 19, .035);
+}
+.card-icon { font-size: 32px; }
+.card h3 { margin: 10px 0 7px; font-size: 19px; }
+.card p { color: var(--muted); font-size: 14px; }
+.text-link {
+  display: inline-block;
+  color: var(--brick);
+  font-weight: 800;
+  margin-top: 7px;
+  text-decoration: none;
+}
+.soft { background: #f2e5d9; }
+.calculator-layout {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  align-items: start;
+}
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  margin: 15px 0 7px;
+}
+input, select, textarea {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d9c8bd;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--brick);
+  box-shadow: 0 0 0 3px #842d2014;
+}
+textarea { resize: vertical; }
+.full-btn { width: 100%; margin-top: 17px; }
+.btn-brick {
+  background: var(--brick);
+  color: white;
+}
+.result-box {
+  background: #fff7ef;
+  border: 1px solid #e7cbb8;
+  padding: 18px;
+  margin-top: 17px;
+  border-radius: 13px;
+}
+.result-number {
+  color: var(--brick);
+  font-size: 29px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+.note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 13px;
+}
+.result-box .note { margin-bottom: 0; }
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.check-list li { margin: 12px 0; }
+.how-number {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--brick);
+  color: white;
+  font-weight: 900;
+}
+.form-card { max-width: 850px; }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 16px;
+}
+.form-grid .wide { grid-column: 1 / -1; }
+.cta {
+  background: var(--brick-dark);
+  color: white;
+  text-align: center;
+}
+.cta p { color: #ecd4c9; }
+footer {
+  background: #211613;
+  color: #e9d5ca;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 13px;
+}
+footer .footer-logo {
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+}
+footer p { margin: 5px 0; }
+.small-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+.small-links a { color: #e9d5ca; }
+.hidden { display: none !important; }
+@media (max-width: 650px) {
+  .hero { padding: 54px 0 45px; }
+  h1 { letter-spacing: -1px; }
+  section { padding: 42px 0; }
+  .calculator-layout { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .wide { grid-column: auto; }
+  .card { padding: 20px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo" style="text-decoration:none">🧱 Brick <span>Mitra</span></a>
+    <div class="nav-right">
+      <button class="lang-btn" id="languageBtn" type="button"
+        onclick="toggleLanguage()">हिंदी</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow" data-en="QUALITY BRICKS • STRONGER FOUNDATIONS"
+          data-hi="गुणवत्तापूर्ण ईंटें • मजबूत नींव">
+          QUALITY BRICKS • STRONGER FOUNDATIONS
+        </div>
+        <h1 data-en="Build Your Dream Home."
+          data-hi="अपने सपनों का घर बनाइए।">
+          Build Your Dream Home.
+        </h1>
+        <p data-en="Red clay bricks for homes, contractors and construction projects. Plan your requirement and request a personalised quote."
+          data-hi="घरों, ठेकेदारों और निर्माण परियोजनाओं के लिए लाल मिट्टी की ईंटें। अपनी जरूरत का अनुमान लगाएं और भाव पूछें।">
+          Red clay bricks for homes, contractors and construction projects.
+          Plan your requirement and request a personalised quote.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#calculator"
+            data-en="🏠 Calculate My Bricks" data-hi="🏠 ईंटों का अनुमान">
+            🏠 Calculate My Bricks
+          </a>
+          <a class="btn btn-white" href="#order"
+            data-en="Request a Quote →" data-hi="भाव पूछें →">
+            Request a Quote →
+          </a>
+        </div>
+        <div class="hero-points">
+          <span data-en="✓ Home construction" data-hi="✓ घर निर्माण">✓ Home construction</span>
+          <span data-en="✓ Bulk orders" data-hi="✓ थोक ऑर्डर">✓ Bulk orders</span>
+          <span data-en="✓ Delivery enquiries" data-hi="✓ डिलीवरी पूछताछ">✓ Delivery enquiries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading"
+        data-en="Everything starts with a strong foundation."
+        data-hi="हर सपना शुरू होता है एक मजबूत नींव से।">
+        Everything starts with a strong foundation.
+      </h2>
+      <p class="section-sub"
+        data-en="A simpler way to plan your brick requirement and connect with us."
+        data-hi="अपनी ईंटों की जरूरत का अनुमान लगाएं और हमसे संपर्क करें।">
+        A simpler way to plan your brick requirement and connect with us.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">🏠</div>
+          <h3 data-en="Dream Home Calculator" data-hi="ड्रीम होम कैलकुलेटर">Dream Home Calculator</h3>
+          <p data-en="Get an early planning estimate based on your built-up area."
+            data-hi="निर्मित क्षेत्रफल के आधार पर शुरुआती अनुमान जानें।">
+            Get an early planning estimate based on your built-up area.
+          </p>
+          <a class="text-link" href="#calculator" data-en="Calculate →" data-hi="अनुमान लगाएं →">Calculate →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">🚚</div>
+          <h3 data-en="Delivery Enquiry" data-hi="डिलीवरी पूछताछ">Delivery Enquiry</h3>
+          <p data-en="Share your site location to request transport pricing."
+            data-hi="ट्रांसपोर्ट का भाव पूछने के लिए निर्माण स्थल का पता दें।">
+            Share your site location to request transport pricing.
+          </p>
+          <a class="text-link" href="#order" data-en="Add Address →" data-hi="पता भरें →">Add Address →</a>
+        </article>
+        <article class="card">
+          <div class="card-icon">📦</div>
+          <h3 data-en="Bulk Orders" data-hi="थोक ऑर्डर">Bulk Orders</h3>
+          <p data-en="For individual homes, builders and larger projects."
+            data-hi="घरों, बिल्डरों और बड़े निर्माण कार्यों के लिए।">
+            For individual homes, builders and larger projects.
+          </p>
+          <a class="text-link" href="#order" data-en="Enquire →" data-hi="पूछताछ करें →">Enquire →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="calculator">
+    <div class="container">
+      <h2 class="section-heading" data-en="🏠 Build Your Dream Home"
+        data-hi="🏠 अपने सपनों का घर बनाएं">🏠 Build Your Dream Home</h2>
+      <p class="section-sub"
+        data-en="Start with your home's total built-up area. This is a rough planning estimate only."
+        data-hi="घर का कुल निर्मित क्षेत्रफल दर्ज करें। यह केवल शुरुआती अनुमान है।">
+        Start with your home's total built-up area. This is a rough planning estimate only.
+      </p>
+
+      <div class="calculator-layout">
+        <div class="card">
+          <label for="area" data-en="Built-up area (square feet)"
+            data-hi="निर्मित क्षेत्रफल (वर्ग फुट)">Built-up area (square feet)</label>
+          <input id="area" type="number" min="1" max="1000000"
+            placeholder="Example: 1200" inputmode="decimal">
+
+          <label for="rate" data-en="Planning assumption: bricks per sq. ft."
+            data-hi="अनुमान: प्रति वर्ग फुट ईंटें">Planning assumption: bricks per sq. ft.</label>
+          <select id="rate">
+            <option value="5" data-en="5 bricks — lower assumption"
+              data-hi="5 ईंटें — कम अनुमान">5 bricks — lower assumption</option>
+            <option value="8" selected data-en="8 bricks — middle assumption"
+              data-hi="8 ईंटें — मध्यम अनुमान">8 bricks — middle assumption</option>
+            <option value="10" data-en="10 bricks — higher assumption"
+              data-hi="10 ईंटें — अधिक अनुमान">10 bricks — higher assumption</option>
+          </select>
+          <button class="btn btn-brick full-btn" type="button"
+            onclick="calculateBricks()" data-en="Calculate Estimate"
+            data-hi="अनुमान निकालें">Calculate Estimate</button>
+          <div id="calcResult" class="result-box hidden" aria-live="polite"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <h3 data-en="Planning your construction?" data-hi="निर्माण की योजना बना रहे हैं?">
+            Planning your construction?
+          </h3>
+          <p data-en="Actual brick quantities depend on wall lengths, heights, thickness, brick dimensions, openings, partitions and design."
+            data-hi="वास्तविक ईंटों की संख्या दीवारों की लंबाई, ऊंचाई, मोटाई, ईंट के आकार, दरवाजों, खिड़कियों और डिजाइन पर निर्भर करती है।">
+            Actual brick quantities depend on wall lengths, heights, thickness,
+            brick dimensions, openings, partitions and design.
+          </p>
+          <ul class="check-list">
+            <li>✓ <span data-en="Estimate for initial planning"
+              data-hi="शुरुआती योजना के लिए अनुमान">Estimate for initial planning</span></li>
+            <li>✓ <span data-en="Ask your mason or engineer to verify"
+              data-hi="मिस्त्री या इंजीनियर से पुष्टि करें">Ask your mason or engineer to verify</span></li>
+            <li>✓ <span data-en="Request a quote for your quantity"
+              data-hi="अपनी मात्रा के लिए भाव पूछें">Request a quote for your quantity</span></li>
+          </ul>
+          <a href="#order" class="btn btn-brick"
+            data-en="Get My Brick Quote →" data-hi="ईंटों का भाव पूछें →">
+            Get My Brick Quote →
+          </a>
+        </div>
+      </div>
+      <p class="note" data-en="Important: this simple area-based estimate is not an engineering calculation and must not be used as a final construction quantity."
+        data-hi="जरूरी: यह क्षेत्रफल पर आधारित सामान्य अनुमान है, इंजीनियरिंग गणना नहीं। इसे निर्माण की अंतिम मात्रा न मानें।">
+        Important: this simple area-based estimate is not an engineering calculation
+        and must not be used as a final construction quantity.
+      </p>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="container">
+      <h2 class="section-heading" data-en="Request Your Brick Quote"
+        data-hi="ईंटों का भाव पूछें">Request Your Brick Quote</h2>
+      <p class="section-sub"
+        data-en="Enter your details and review the enquiry message in WhatsApp before sending."
+        data-hi="अपनी जानकारी भरें। WhatsApp पर संदेश देखकर उसे भेजें।">
+        Enter your details and review the enquiry message in WhatsApp before sending.
+      </p>
+
+      <div class="card form-card">
+        <form id="orderForm">
+          <div class="form-grid">
+            <div>
+              <label for="customer" data-en="Customer name" data-hi="ग्राहक का नाम">Customer name</label>
+              <input id="customer" required autocomplete="name" placeholder="Full name">
+            </div>
+            <div>
+              <label for="mobile" data-en="Your mobile number" data-hi="आपका मोबाइल नंबर">Your mobile number</label>
+              <input id="mobile" type="tel" required autocomplete="tel"
+                inputmode="tel" pattern="[0-9+() -]{10,16}" placeholder="Mobile number">
+            </div>
+            <div>
+              <label for="quantity" data-en="Required brick quantity" data-hi="कितनी ईंटें चाहिए">Required brick quantity</label>
+              <input id="quantity" type="number" min="1" required placeholder="Example: 5000">
+            </div>
+            <div>
+              <label for="delivery" data-en="Delivery option" data-hi="डिलीवरी का विकल्प">Delivery option</label>
+              <select id="delivery">
+                <option value="Site delivery" data-en="Delivery to construction site"
+                  data-hi="निर्माण स्थल पर डिलीवरी">Delivery to construction site</option>
+                <option value="Kiln pickup" data-en="Pickup at brick kiln"
+                  data-hi="भट्ठे से खुद उठाएं">Pickup at brick kiln</option>
+              </select>
+            </div>
+            <div>
+              <label for="village" data-en="Village / Town" data-hi="गांव / शहर">Village / Town</label>
+              <input id="village" required autocomplete="address-level2">
+            </div>
+            <div>
+              <label for="district" data-en="District" data-hi="जिला">District</label>
+              <input id="district" required autocomplete="address-level1">
+            </div>
+            <div>
+              <label for="pin" data-en="PIN code" data-hi="पिन कोड">PIN code</label>
+              <input id="pin" inputmode="numeric" pattern="[0-9]{6}"
+                maxlength="6" required placeholder="6-digit PIN">
+            </div>
+            <div>
+              <label for="date" data-en="Preferred delivery date (optional)"
+                data-hi="डिलीवरी की पसंदीदा तारीख (वैकल्पिक)">Preferred delivery date (optional)</label>
+              <input id="date" type="date">
+            </div>
+            <div class="wide">
+              <label for="address" data-en="Full delivery address"
+                data-hi="पूरा डिलीवरी पता">Full delivery address</label>
+              <textarea id="address" rows="3" required
+                autocomplete="street-address" placeholder="House, road, landmark, construction site..."></textarea>
+            </div>
+            <div class="wide">
+              <label for="notes" data-en="Additional requirements (optional)"
+                data-hi="अन्य जरूरतें (वैकल्पिक)">Additional requirements (optional)</label>
+              <textarea id="notes" rows="2"
+                placeholder="Brick type, project details, etc."></textarea>
+            </div>
+          </div>
+          <button class="btn btn-brick full-btn" type="submit"
+            data-en="Send Enquiry on WhatsApp" data-hi="WhatsApp पर पूछताछ भेजें">
+            Send Enquiry on WhatsApp
+          </button>
+          <p class="note" data-en="This opens WhatsApp with a draft message. It does not automatically save an order or confirm availability, price or delivery."
+            data-hi="इससे WhatsApp में संदेश खुलेगा। ऑर्डर अपने आप सेव या पक्का नहीं होगा; कीमत और डिलीवरी की पुष्टि अलग से करनी होगी।">
+            This opens WhatsApp with a draft message. It does not automatically save an order
+            or confirm availability, price or delivery.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-heading" data-en="Simple ordering process"
+        data-hi="ऑर्डर करने का आसान तरीका">Simple ordering process</h2>
+      <p class="section-sub" data-en="From enquiry to delivery confirmation."
+        data-hi="पूछताछ से डिलीवरी की पुष्टि तक।">From enquiry to delivery confirmation.</p>
+      <div class="grid">
+        <article class="card">
+          <div class="how-number">1</div>
+          <h3 data-en="Share your needs" data-hi="अपनी जरूरत बताएं">Share your needs</h3>
+          <p data-en="Tell us the quantity and delivery location."
+            data-hi="ईंटों की मात्रा और डिलीवरी का पता बताएं।">
+            Tell us the quantity and delivery location.
+          </p>
+        </article>
+        <article class="card">
+          <div class="how-number">2</div>
+          <h3 data-en="Confirm the quote" data-hi="भाव पक्का करें">Confirm the quote</h3>
+          <p data-en="Ask us to confirm the brick price and transport cost."
+            data-hi="ईंटों की कीमत और ट्रांसपोर्ट खर्च की पुष्टि करें।">
+            Ask us to confirm the brick price and transport cost.
+          </p>
+        </article>
+        <article class="card">
+          <div class="how-number">3</div>
+          <h3 data-en="Arrange delivery" data-hi="डिलीवरी की व्यवस्था">Arrange delivery</h3>
+          <p data-en="The delivery contact can be shared privately after order confirmation."
+            data-hi="ऑर्डर पक्का होने पर डिलीवरी संपर्क निजी तौर पर दिया जा सकता है।">
+            The delivery contact can be shared privately after order confirmation.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2 class="section-heading" data-en="Let's build something strong."
+        data-hi="आइए, मजबूत निर्माण करें।">Let's build something strong.</h2>
+      <p data-en="Tell Brick Mitra about your next construction project."
+        data-hi="अपने अगले निर्माण कार्य के बारे में Brick Mitra को बताएं।">
+ 
